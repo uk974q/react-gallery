@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+:root{
+  --black: #150605;
+  --red: #EA453C;
+  --pink: #F47B6E;
+  --light-blue: #EFFBFE;
+  --blue: #ACE6EC;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body{
+  font-family: 'Oswald', sans-serif;
+  /* background-color: red; */
+  /* margin: 0;
+  padding: 0; */
+  /* height: 100vh; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background-color: var(--pink);
+  color: var(--light-blue);
+  /* -webkit-box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
+    -moz-box-shadow: 0px 2px 10px -5px rgba(21,6,5,1); */
+  box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+
+}
+
+main.photos{
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 100px;
+  gap: 0.5em;
+  /* grid-auto-flow: dense; */
+}
+img.image-grid{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wide {
+  grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.image-container{
+  position: relative;
+}
+.favorite{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 1.2rem;
+  color: var(--red);
+  cursor: pointer;
+}
+.cart{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1.2rem;
+  color: var(--blue);
+  cursor: pointer;
+}
+.cart-page section{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.cart-page .btn{
+  border-radius: 5px;
+  color: whitesmoke;
+  background-color: #EA453C;
+  font-size: 1em;
+  padding: 10px;
+  cursor: pointer;
+  transition: 500ms;
+}
+.cart-page .btn:hover{
+  background-color: #150605;
+}
+.cart-page .btn[disabled]{
+  background-color: ghostwhite;
+  color: grey;
+}
+.cart-page .total-price{
+  font-size: 1.5rem;
+}
+.cart-list{
+  display: grid;
+  width: 80%;
+  padding: 10px;
+  grid-column: 1/-1;
+  gap: 1em;
+}
+.cart-item{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 80% 10% 10%;
+}
+.cart-item img{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+.cart-item .delete-icon{
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
