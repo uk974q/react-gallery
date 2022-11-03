@@ -11,7 +11,7 @@ export default function Image(props){
             className={`${props.className} image-container`} 
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}>
-            <img src={props.img.url} className="image-grid"/>
+            <img alt={props.img.url} src={props.img.url} className="image-grid"/>
             {(hovered || props.img.isFavorite) && <i className="ri-heart-line favorite" onClick={() => toggleFavorite(props.img.id)}></i>}
             {(!isItemAdded && hovered) && <i className="ri-add-circle-line cart" 
                 onClick={() => addItemToCart({className: props.className, img: props.img})}></i>}
