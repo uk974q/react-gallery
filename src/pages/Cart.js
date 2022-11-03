@@ -1,18 +1,16 @@
 import { useContext, useState } from "react"
+
 import CartItem from "../components/CartItem"
 import { Context } from "../Context"
 
 export default function Cart(){
     const {cartItems, clearCart} = useContext(Context)
     const [orderPlaced, setOrderPlaced] = useState(false)
-    // console.log("Cart",cartItems)
     let total = 0
     const cartItemElements = cartItems.map(el => {
         total += (el.img.id*5)
         return <CartItem key={el.img.id} item={el.img}  />
     })
-    // setTotalPrice(total)
-    // console.log("Total",total, typeof total)
     function handleCheckout(){
         document.getElementById("checkoutBtn").textContent ="Ordering..."
         setTimeout(()=>{

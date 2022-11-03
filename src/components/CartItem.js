@@ -1,4 +1,5 @@
 import { useContext } from "react"
+
 import { Context } from "../Context"
 
 export default function CartItem(props){
@@ -16,7 +17,7 @@ export default function CartItem(props){
     }
     return(
         <div className="cart-item">
-            <img src={props.item.url} />
+            <img alt={props.item.url} src={props.item.url} />
             <p>Price : {price}</p>
             <i id={`deleteItem${props.item.id}`}
                 className="ri-delete-bin-line delete-icon" 

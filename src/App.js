@@ -1,9 +1,11 @@
+import { BrowserRouter as Router } from 'react-router-dom';
+import {Routes, Route} from "react-router-dom"
+
 import './App.css';
 import Header from "./components/Header"
 import Cart from "./pages/Cart"
 import Photos from "./pages/Photos"
-import { BrowserRouter as Router } from 'react-router-dom';
-import {Routes, Route} from "react-router-dom"
+
 function App() {
   return (
   <Router> 
